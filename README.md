@@ -1,2 +1,3 @@
-# template-repo
-Template for new repositories
+# Telegram bot project
+
+Main future is a subscription to new articles using telegram bot.
