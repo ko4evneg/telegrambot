@@ -11,7 +11,7 @@ import static com.github.ko4evneg.tb.comand.CommandName.*;
 public class HelpCommand implements Command {
     private final SendBotMessageService sendBotMessageService;
 
-    private final String HELP_MESSAGE = String.format("<b>Available commands:</b> " +
+    public final static String HELP_MESSAGE = String.format("<b>Available commands:</b> " +
                     "\n%s - start bot," +
                     "\n%s - stop bot," +
                     "\n%s - get help",

@@ -9,7 +9,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 public class UnknownCommand implements Command {
     private final SendBotMessageService sendBotMessageService;
 
-    private final String UNKNOWN_MESSAGE = "Do not understand you! Try /help for getting command list";
+    public final static String UNKNOWN_MESSAGE = "Do not understand you! Try /help for getting command list";
 
     public UnknownCommand(SendBotMessageService sendBotMessageService) {
         this.sendBotMessageService = sendBotMessageService;

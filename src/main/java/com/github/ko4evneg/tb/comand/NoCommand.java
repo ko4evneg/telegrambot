@@ -9,7 +9,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 public class NoCommand implements Command {
     private final SendBotMessageService sendBotMessageService;
 
-    private final String NO_MESSAGE = "Try /help for getting command list";
+    public final static String NO_MESSAGE = "Try /help for getting command list";
 
     public NoCommand(SendBotMessageService sendBotMessageService) {
         this.sendBotMessageService = sendBotMessageService;

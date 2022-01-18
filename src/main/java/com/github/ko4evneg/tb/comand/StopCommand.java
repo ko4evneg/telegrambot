@@ -8,7 +8,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 public class StopCommand implements Command {
     private final SendBotMessageService sendBotMessageService;
 
-    private final String STOP_MESSAGE = "OK, now I stop working!";
+    public final static String STOP_MESSAGE = "OK, now I stop working!";
 
     public StopCommand(SendBotMessageService sendBotMessageService) {
         this.sendBotMessageService = sendBotMessageService;
