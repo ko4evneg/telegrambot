@@ -19,7 +19,7 @@ import static com.github.ko4evneg.tb.comand.CommandName.NO;
 public class TelegramBot extends TelegramLongPollingBot {
     private final static String COMMAND_PREFIX = "/";
 
-    @Value("${bot.username}")
+    @Value("${BOT_USERNAME}")
     private String botUsername;
 
     @Value("${BOT_TOKEN}")

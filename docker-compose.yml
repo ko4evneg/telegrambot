@@ -6,4 +6,5 @@ services:
       context: .
     environment:
       - BOT_TOKEN=${BOT_TOKEN}
+      - BOT_USERNAME=${BOT_USERNAME}
     restart: always

@@ -2,7 +2,8 @@
 git pull
 
 :: Add environment variables
-set BOT_TOKEN=%1
+set BOT_TOKEN=%2
+set BOT_USERNAME=%1
 
 :: Prepare Jar
 @echo clean
