@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:
+  dev-tb-db:
+    image: mysql
+    restart: always
+    container_name: dev-tb-db
+    ports:
+      - '3307:3306'
+    environment:
+      MYSQL_DATABASE: 'dev_tb_db'
+      MYSQL_USER: 'tb_user'
+      MYSQL_PASSWORD: 'root'
+      MYSQL_ROOT_PASSWORD: 'root'
