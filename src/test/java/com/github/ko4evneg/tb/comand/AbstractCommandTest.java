@@ -3,6 +3,7 @@ package com.github.ko4evneg.tb.comand;
 import com.github.ko4evneg.tb.bot.TelegramBot;
 import com.github.ko4evneg.tb.service.SendBotMessageService;
 import com.github.ko4evneg.tb.service.SendBotMessageServiceImpl;
+import com.github.ko4evneg.tb.service.TelegramUserService;
 import org.checkerframework.checker.units.qual.C;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -14,6 +15,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 public abstract class AbstractCommandTest {
     protected TelegramBot telegramBot = Mockito.mock(TelegramBot.class);
     protected SendBotMessageService sendBotMessageService = new SendBotMessageServiceImpl(telegramBot);
+    protected TelegramUserService telegramUserService = Mockito.mock(TelegramUserService.class);
 
     abstract String getCommandName();
     abstract Command getCommand();
