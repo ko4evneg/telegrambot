@@ -25,7 +25,7 @@ class CommandContainerTest {
 
     @Test
     public void shouldGetAllExistingCommands() {
-        List<Class> commandlist = List.of(StartCommand.class, StopCommand.class, HelpCommand.class, NoCommand.class);
+        List<Class> commandlist = List.of(StartCommand.class, StopCommand.class, HelpCommand.class, NoCommand.class, StatCommand.class);
         Arrays.stream(CommandName.values()).forEach((commandName) -> {
             Command command = commandContainer.retrieveCommand(commandName.getCommandName());
             Assertions.assertTrue(commandlist.contains(command.getClass()));
