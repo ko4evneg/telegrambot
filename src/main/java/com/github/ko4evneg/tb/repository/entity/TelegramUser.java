@@ -11,6 +11,14 @@ import javax.persistence.Table;
 @Entity
 @Table(name="tg_user")
 public class TelegramUser {
+    public TelegramUser(String chatId, boolean active) {
+        this.chatId = chatId;
+        this.active = active;
+    }
+
+    public TelegramUser() {
+    }
+
     @Id
     @Column(name = "chat_id")
     private String chatId;
