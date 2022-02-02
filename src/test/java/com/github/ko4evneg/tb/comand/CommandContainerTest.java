@@ -1,6 +1,7 @@
 package com.github.ko4evneg.tb.comand;
 
 import com.github.ko4evneg.tb.service.SendBotMessageService;
+import com.github.ko4evneg.tb.service.TelegramUserService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -18,12 +19,13 @@ class CommandContainerTest {
     @BeforeEach
     public void init() {
         sendBotMessageService = Mockito.mock(SendBotMessageService.class);
-        commandContainer = new CommandContainer(sendBotMessageService);
+        TelegramUserService telegramUserService = Mockito.mock(TelegramUserService.class);
+        commandContainer = new CommandContainer(sendBotMessageService, telegramUserService);
     }
 
     @Test
     public void shouldGetAllExistingCommands() {
-        List<Class> commandlist = List.of(StartCommand.class, StopCommand.class, HelpCommand.class, NoCommand.class);
+        List<Class> commandlist = List.of(StartCommand.class, StopCommand.class, HelpCommand.class, NoCommand.class, StatCommand.class);
         Arrays.stream(CommandName.values()).forEach((commandName) -> {
             Command command = commandContainer.retrieveCommand(commandName.getCommandName());
             Assertions.assertTrue(commandlist.contains(command.getClass()));

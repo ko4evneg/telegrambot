@@ -1,5 +1,8 @@
 #  Release notes
 
+###  _0.4.0-SNAPSHOT_
+- TB-4: added database connection with Spring Data JPA
+
 ###  _0.3.0-SNAPSHOT_
 - TB-4: added deployment process to the project
 

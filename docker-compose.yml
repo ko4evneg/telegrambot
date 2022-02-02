@@ -2,9 +2,20 @@ version: '3.1'
 
 services:
   tb:
+    depends_on:
+      - tb-db
+    container_name: tbot
     build:
       context: .
     environment:
       - BOT_TOKEN=${BOT_TOKEN}
       - BOT_USERNAME=${BOT_USERNAME}
+      - BOT_DB_USERNAME=${BOT_DB_USERNAME}
+      - BOT_DB_PASSWORD=${BOT_DB_PASSWORD}
     restart: always
+  tb-db:
+    image: mysql
+    restart: always
+    container_name: tb-db
+    ports:
+      - '3307:3306'

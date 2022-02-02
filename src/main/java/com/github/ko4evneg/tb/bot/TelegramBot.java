@@ -3,6 +3,7 @@ package com.github.ko4evneg.tb.bot;
 import com.github.ko4evneg.tb.comand.CommandContainer;
 import com.github.ko4evneg.tb.service.SendBotMessageService;
 import com.github.ko4evneg.tb.service.SendBotMessageServiceImpl;
+import com.github.ko4evneg.tb.service.TelegramUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -27,8 +28,9 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     private final CommandContainer commandContainer;
 
-    public TelegramBot() {
-        commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this));
+    @Autowired
+    public TelegramBot(TelegramUserService telegramUserService) {
+        commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this), telegramUserService);
     }
 
     @Override
